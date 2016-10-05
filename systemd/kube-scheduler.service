@@ -1,0 +1,14 @@
+[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+EnvironmentFile=-/etc/kubernetes/kube-scheduler
+ExecStart=/opt/kubernetes/bin/kube-scheduler    ${KUBE_LOGTOSTDERR}     \
+                        ${KUBE_LOG_LEVEL}       \
+                        ${KUBE_MASTER}          \
+                        ${KUBE_SCHEDULER_ARGS}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,24 @@
+# --logtostderr=true: log to standard error instead of files
+KUBE_LOGTOSTDERR="--logtostderr=true"
+
+#  --v=0: log level for V logs
+KUBE_LOG_LEVEL="--v=0"
+
+# --address=0.0.0.0: The IP address for the Kubelet to serve on (set to 0.0.0.0 for all interfaces)
+NODE_ADDRESS="--address=0.0.0.0"
+
+# --port=10250: The port for the Kubelet to serve on. Note that "kubectl logs" will not work if you set this flag.
+NODE_PORT="--port=10250"
+
+# --hostname-override="": If non-empty, will use this string as identification instead of the actual hostname.
+NODE_HOSTNAME="--hostname-override=kmaster.com"
+
+# --api-servers=[]: List of Kubernetes API servers for publishing events, 
+# and reading pods and services. (ip:port), comma separated.
+KUBELET_API_SERVER="--api-servers=192.168.50.100:8080"
+
+# --allow-privileged=false: If true, allow containers to request privileged mode. [default=false]
+KUBE_ALLOW_PRIV="--allow-privileged=false"
+
+# Add your own!
+KUBELET_ARGS=""
