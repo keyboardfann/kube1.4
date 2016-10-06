@@ -3,7 +3,7 @@ Description=Kubernetes API Server
 Documentation=https://github.com/kubernetes/kubernetes
 
 [Service]
-EnvironmentFile=-/etc/kubernetes/kube-apiserver
+EnvironmentFile=-/etc/kubernetes/conf/kube-apiserver
 ExecStart=/opt/kubernetes/bin/kube-apiserver    ${KUBE_LOGTOSTDERR}         \
                         ${KUBE_LOG_LEVEL}           \
                         ${KUBE_ETCD_SERVERS}        \

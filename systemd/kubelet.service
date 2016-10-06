@@ -4,7 +4,7 @@ After=docker.service
 Requires=docker.service
 
 [Service]
-EnvironmentFile=-/etc/kubernetes/kubelet
+EnvironmentFile=-/etc/kubernetes/conf/kubelet
 ExecStart=/opt/kubernetes/bin/kubelet    ${KUBE_LOGTOSTDERR}     \
                     ${KUBE_LOG_LEVEL}       \
                     ${NODE_ADDRESS}         \

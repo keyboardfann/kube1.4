@@ -3,7 +3,7 @@ Description=Kubernetes Proxy
 After=network.target
 
 [Service]
-EnvironmentFile=-/etc/kubernetes/kube-proxy
+EnvironmentFile=-/etc/kubernetes/conf/kube-proxy
 ExecStart=/opt/kubernetes/bin/kube-proxy    ${KUBE_LOGTOSTDERR} \
                     ${KUBE_LOG_LEVEL}   \
                     ${NODE_HOSTNAME}    \

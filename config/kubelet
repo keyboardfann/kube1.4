@@ -15,7 +15,7 @@ NODE_HOSTNAME="--hostname-override=kmaster.com"
 
 # --api-servers=[]: List of Kubernetes API servers for publishing events, 
 # and reading pods and services. (ip:port), comma separated.
-KUBELET_API_SERVER="--api-servers=192.168.50.100:8080"
+KUBELET_API_SERVER="--api-servers=kmaster.com:8080"
 
 # --allow-privileged=false: If true, allow containers to request privileged mode. [default=false]
 KUBE_ALLOW_PRIV="--allow-privileged=false"

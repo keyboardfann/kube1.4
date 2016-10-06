@@ -3,7 +3,7 @@ Description=Kubernetes Scheduler
 Documentation=https://github.com/kubernetes/kubernetes
 
 [Service]
-EnvironmentFile=-/etc/kubernetes/kube-scheduler
+EnvironmentFile=-/etc/kubernetes/conf/kube-scheduler
 ExecStart=/opt/kubernetes/bin/kube-scheduler    ${KUBE_LOGTOSTDERR}     \
                         ${KUBE_LOG_LEVEL}       \
                         ${KUBE_MASTER}          \

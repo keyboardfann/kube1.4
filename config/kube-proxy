@@ -5,7 +5,7 @@ KUBE_LOGTOSTDERR="--logtostderr=true"
 KUBE_LOG_LEVEL="--v=4"
 
 # --hostname-override="": If non-empty, will use this string as identification instead of the actual hostname.
-NODE_HOSTNAME="--hostname-override=192.168.50.100"
+NODE_HOSTNAME="--hostname-override=kmaster.com"
 
 # --master="": The address of the Kubernetes API server (overrides any value in kubeconfig)
-KUBE_MASTER="--master=http://192.168.50.100:8080"
+KUBE_MASTER="--master=http://kmaster.com:8080"
