@@ -2,7 +2,7 @@
 
 ##Folder Description
 
-	config -> /etc/kubernetes/
+	config -> /etc/kubernetes/conf
 
 	bin -> /opt/kubernetes/bin/
 
