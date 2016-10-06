@@ -17,8 +17,8 @@ mkdir -p /etc/kubernetes/conf /opt/kubernetes/bin
 cp config/* /etc/kubernetes/conf/
 cp bin/* /opt/kubernetes/bin/
 cp systemd/* /usr/lib/systemd/system/
-cp -fn config/etcd.conf /etc/etcd/
-cp -fn config/flannel /etc/sysconfig/
+/bin/cp -rf config/etcd.conf /etc/etcd/
+/bin/cp -rf config/flanneld /etc/sysconfig/
 
 ## Reload systemd
 systemctl daemon-reload
@@ -28,19 +28,19 @@ cd /opt/kubernetes/bin/; for i in `ls`;do tar -zxvf $i;done
 
 
 ## Start master service
-for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
-systemctl restart $SERVICES
-systemctl enable $SERVICES
-systemctl status $SERVICES
-done
-
-## crete flannel network
-etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}'
-
-
-## Start slave service
-for SERVICES in kube-proxy kubelet docker flanneld; do
-systemctl restart $SERVICES
-systemctl enable $SERVICES
-systemctl status $SERVICES
-done
+#for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
+#systemctl restart $SERVICES
+#systemctl enable $SERVICES
+#systemctl status $SERVICES
+#done
+#
+### crete flannel network
+#etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}'
+#
+#
+### Start slave service
+#for SERVICES in kube-proxy kubelet docker flanneld; do
+#systemctl restart $SERVICES
+#systemctl enable $SERVICES
+#systemctl status $SERVICES
+#done
