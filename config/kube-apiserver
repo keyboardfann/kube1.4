@@ -6,7 +6,7 @@ KUBE_LOG_LEVEL="--v=4"
 
 # --etcd-servers=[]: List of etcd servers to watch (http://ip:port), 
 # comma separated. Mutually exclusive with -etcd-config
-KUBE_ETCD_SERVERS="--etcd-servers=http://192.168.50.100:2379"
+KUBE_ETCD_SERVERS="--etcd-servers=http://kmaster.com:2379"
 
 # --insecure-bind-address=127.0.0.1: The IP address on which to serve the --insecure-port.
 KUBE_API_ADDRESS="--insecure-bind-address=0.0.0.0"
@@ -19,7 +19,7 @@ NODE_PORT="--kubelet-port=10250"
 
 # --advertise-address=<nil>: The IP address on which to advertise 
 # the apiserver to members of the cluster.
-KUBE_ADVERTISE_ADDR="--advertise-address=192.168.50.100"
+KUBE_ADVERTISE_ADDR="--advertise-address=kmaster.com"
 
 # --allow-privileged=false: If true, allow privileged containers.
 KUBE_ALLOW_PRIV="--allow-privileged=false"
@@ -34,7 +34,7 @@ KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.10.10.0/24"
 #   LimitRanger, AlwaysDeny, SecurityContextDeny, NamespaceExists, 
 #   NamespaceLifecycle, NamespaceAutoProvision,
 #   AlwaysAdmit, ServiceAccount, ResourceQuota, DefaultStorageClass
-KUBE_ADMISSION_CONTROL="--admission-control="
+KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ResourceQuota"
 
 # --client-ca-file="": If set, any request presenting a client certificate signed
 # by one of the authorities in the client-ca-file is authenticated with an identity
