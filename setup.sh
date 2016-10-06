@@ -28,19 +28,19 @@ cd /opt/kubernetes/bin/; for i in `ls`;do tar -zxvf $i;done
 
 
 ## Start master service
-#for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
-#systemctl restart $SERVICES
-#systemctl enable $SERVICES
-#systemctl status $SERVICES
-#done
-#
-### crete flannel network
-#etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}'
-#
-#
-### Start slave service
-#for SERVICES in kube-proxy kubelet docker flanneld; do
-#systemctl restart $SERVICES
-#systemctl enable $SERVICES
-#systemctl status $SERVICES
-#done
+for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
+systemctl restart $SERVICES
+systemctl enable $SERVICES
+systemctl status $SERVICES
+done
+
+## crete flannel network
+etcdctl mk /atomic.io/network/config '{"Network":"172.17.0.0/16"}'
+
+
+## Start slave service
+for SERVICES in kube-proxy kubelet docker flanneld; do
+systemctl restart $SERVICES
+systemctl enable $SERVICES
+systemctl status $SERVICES
+done

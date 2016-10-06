@@ -19,7 +19,7 @@ NODE_PORT="--kubelet-port=10250"
 
 # --advertise-address=<nil>: The IP address on which to advertise 
 # the apiserver to members of the cluster.
-KUBE_ADVERTISE_ADDR="--advertise-address=kmaster.com"
+KUBE_ADVERTISE_ADDR="--advertise-address=192.168.50.100"
 
 # --allow-privileged=false: If true, allow privileged containers.
 KUBE_ALLOW_PRIV="--allow-privileged=false"
